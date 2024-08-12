@@ -55,12 +55,10 @@ function loadTrack(track_index) {
     track_artist.textContent = track_list[track_index].artist;
     now_playing.textContent =
         "PLAYING " + (track_index + 1) + " OF " + track_list.length;
-    // Set an interval of 1000 milliseconds
-    // for updating the seek slider
+    // Set an interval of 1000 milliseconds for updating the seek slider
     updateTimer = setInterval(seekUpdate, 1000);
 
-    // Move to the next track if the current finishes playing
-    // using the 'ended' event
+    // Move to the next track if the current finishes playing using the 'ended' event
     curr_track.addEventListener("ended", nextTrack);
 
     // Apply a random background color
@@ -68,8 +66,7 @@ function loadTrack(track_index) {
 }
 
 function random_bg_color() {
-    // Get a random number between 64 to 256
-    // (for getting lighter colors)
+    // Get a random number between 64 to 256 (for getting lighter colors)
     let red = Math.floor(Math.random() * 256) + 64;
     let green = Math.floor(Math.random() * 256) + 64;
     let blue = Math.floor(Math.random() * 256) + 64;
@@ -88,8 +85,7 @@ function resetValues() {
     seek_slider.value = 0;
 }
 function playpauseTrack() {
-    // Switch between playing and pausing
-    // depending on the current state
+    // Switch between playing and pausing depending on the current state
     if (!isPlaying) playTrack();
     else pauseTrack();
 }
@@ -112,8 +108,7 @@ function pauseTrack() {
 }
 
 function nextTrack() {
-    // Go back to the first track if the
-    // current one is the last in the track list
+    // Go back to the first track if the current one is the last in the track list
     if (track_index < track_list.length - 1)
         track_index += 1;
     else track_index = 0;
@@ -123,8 +118,7 @@ function nextTrack() {
 }
 
 function prevTrack() {
-    // Go back to the last track if the
-    // current one is the first in the track list
+    // Go back to the last track if the current one is the first in the track list
     if (track_index > 0)
         track_index -= 1;
     else track_index = track_list.length - 1;
@@ -134,9 +128,7 @@ function prevTrack() {
     playTrack();
 }
 function seekTo() {
-    // Calculate the seek position by the
-    // percentage of the seek slider 
-    // and get the relative duration to the track
+    // Calculate the seek position by the percentage of the seek slider and get the relative duration to the track
     seekto = curr_track.duration * (seek_slider.value / 100);
 
     // Set the current track position to the calculated seek position
@@ -144,8 +136,7 @@ function seekTo() {
 }
 
 function setVolume() {
-    // Set the volume according to the
-    // percentage of the volume slider set
+    // Set the volume according to the percentage of the volume slider set
     curr_track.volume = volume_slider.value / 100;
 }
 function seekUpdate() {
