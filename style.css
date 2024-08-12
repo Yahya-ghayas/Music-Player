@@ -1,0 +1,126 @@
+body {
+    background-color: rgb(60, 211, 160);
+    transition: background-color .5s;
+}
+
+.player {
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 7px;
+}
+
+.track-art {
+    margin: 20px;
+    height: 290px;
+    width: 220px;
+    
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    border-radius: 18%;
+}
+
+.now-playing {
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin-bottom: 25px;
+}
+
+.track-artist {
+    font-size: 1.7rem;
+    font-style: oblique;
+}
+
+.track-name {
+    font-size: 2.8rem;
+    font-style: italic;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playpause-track,
+.prev-track,
+.next-track {
+    padding: 25px;
+    opacity: 0.7;
+    transition: opacity .2s;
+    font-size: 30px;
+
+}
+
+.playpause-track:hover,
+.pre-track:hover,
+.next-track:hover {
+    opacity: 1;
+}
+
+.slider_container {
+    display: flex;
+    width: 70%;
+    max-width: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume_slider, .seek_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.seek_slider {
+    width: 60%;
+}
+
+.volume_slider {
+    width: 30%;
+}
+
+.current-time,
+.total-time {
+    padding: 10px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+    padding: 10px;
+    width: 15px;
+}
+
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward {
+    cursor: pointer;
+}
